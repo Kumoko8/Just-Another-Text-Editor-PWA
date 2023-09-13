@@ -27,4 +27,20 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
-registerRoute();
+registerRoute(
+  workbox.routing.registerRoute(
+    // Customize the URL pattern and add the request.destination condition
+    ({ request }) => {
+      const destination = request.destination;
+      return (
+        request.url.startsWith('https://api.example.com/') &&
+        (destination === 'image' || destination === 'style')
+      );
+    },
+    new workbox.strategies.CacheFirst({
+      cacheName: 'images-styles-cache',
+      plugins: [CacheableResponsePlugin],
+    })
+  )
+
+);
