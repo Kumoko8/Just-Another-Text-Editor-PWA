@@ -17,26 +17,26 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List'
+        title: 'JATE'
       }),
       new WebpackPwaManifest({
-        name: 'TODOs Manifest Example',
-        short_name: 'myPWA',
-        description:'its a PWA',
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description:'a standard JavaScript text editor',
         background_color:'#7eb4e2',
         theme_color: '#7eb4e2',
-        start_url: "./",
-        publicpath: './',
+        start_url: './',
+        publicPath: './',
         icons: [
          {
-           src: path.resolve('assets/images/logo.png'),
+           src: path.resolve('./src/images/logo.png'),
            sizes: [96, 128, 192, 256, 384, 512],
            destination: path.join('assets', 'icons'),
          }
         ]
        }),
        new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './src/service-worker.js',
         swDest: 'service-worker.js',
       }), 
     ],

@@ -28,7 +28,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
 registerRoute(
-  workbox.routing.registerRoute(
+ 
     // Customize the URL pattern and add the request.destination condition
     ({ request }) => {
       const destination = request.destination;
@@ -41,6 +41,4 @@ registerRoute(
       cacheName: 'images-styles-cache',
       plugins: [CacheableResponsePlugin],
     })
-  )
-
-);
+  );
