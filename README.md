@@ -6,11 +6,11 @@
  
      This project focused on PWAs or "progressive web applications" which allows for faster performance by installing packages on the users computer. This allows the application to be used even offline and reduces the amount of server calls needed. We also learned about webpack configuration and service worker registration which both facilitate the process of storing and retrieving an app's files more efficiently.
 
-##Screenshot
+## Screenshot
 ![Screen Shot 2023-10-04 at 1 04 40 PM](https://github.com/Kumoko8/Just-Another-Text-Editor-PWA/assets/131223690/60f8b090-6640-43d1-8bb2-1a901b75ee52)
 
 
-##Link to Deployed App
+## Link to Deployed App
 https://frozen-everglades-72637-33936944937c.herokuapp.com/
 
    ## Table of Contents
