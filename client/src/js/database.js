@@ -34,4 +34,3 @@ export const getDb = async () => {
 };
 initdb();
 
-//use activities 21 -26
