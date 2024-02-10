@@ -1,6 +1,7 @@
 // Import methods to save and get data from the indexedDB database in './database.js'
 import { getDb, putDb } from './database';
 import { header } from './header';
+import { displayOutput } from './output';
 
 export default class {
   constructor() {
@@ -38,5 +39,21 @@ export default class {
       console.log('The editor has lost focus');
       putDb(localStorage.getItem('content'));
     });
+
+// Assuming 'editor' is your CodeMirror instance
+const editor = CodeMirror(document.querySelector('#main'), {
+    // CodeMirror configuration options
+});
+
+// Event listener for the "Run" button
+document.getElementById('showOutputBtn').addEventListener('click', () => {
+    // Get the value of the editor
+    const editorValue = editor.getValue();
+    
+    // Pass the editor value to the displayOutput function
+    displayOutput(editorValue);
+});
+     
+
   }
 }
